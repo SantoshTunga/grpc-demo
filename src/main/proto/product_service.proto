@@ -1,0 +1,26 @@
+// version of the proto file
+// keeping all the fields in the proto file as optional to maintain backward compatibility
+syntax = "proto3";
+
+// name space of the proto file
+package com.example.product;
+
+option java_package = "com.grpc.product.proto";
+// option to generate multiple java files for each message types .
+option java_multiple_files = true;
+
+message ProductRequestById {
+  int32 typeId = 1;
+}
+
+message Product {
+  string id = 1;
+  string title = 2;
+  double price = 3;
+  string typeId = 4;
+  double stock_quantity = 5;
+}
+
+service ProductService {
+  rpc GetProductsByType(ProductRequestById) returns (stream Product);
+}
