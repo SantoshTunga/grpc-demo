@@ -4,10 +4,12 @@ import com.grpc.product.proto.Product;
 import com.grpc.product.proto.ProductRequestById;
 import com.grpc.product.proto.ProductServiceGrpc;
 import io.grpc.stub.StreamObserver;
+import org.springframework.grpc.server.service.GrpcService;
 import reactor.core.publisher.Flux;
 
 import java.time.Duration;
 
+@GrpcService
 public class ProductService extends ProductServiceGrpc.ProductServiceImplBase {
 
     @Override
@@ -17,7 +19,8 @@ public class ProductService extends ProductServiceGrpc.ProductServiceImplBase {
 
         // Flux with Response Observer is used .
 
-        Flux.range(1, 100).interval(Duration.ofMillis(100))
+        //Flux.range(1, 100).delayElements(Duration.ofMillis(100));
+        Flux.interval(Duration.ofMillis(100)).take(100)
                 .map(i -> Product.newBuilder().setId("P-" + i).setTitle("Product Item #" + i)
                         .setPrice(49.99 * i)
                         .setTypeId(String.valueOf(productTypeId))

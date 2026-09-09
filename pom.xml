@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.grpc.demo</groupId>
-	<artifactId>grpc-demo</artifactId>
+	<artifactId>grpc-server-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>

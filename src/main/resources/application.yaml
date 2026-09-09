@@ -1,0 +1,31 @@
+spring:
+  application.name: grpc-demo
+
+  # ==========================================================
+  # 🌐 SPRING gRPC SERVER CONFIGURATION
+  # ==========================================================
+  grpc:
+    server:
+      port: 9090
+
+      # Message payloads
+      # max-inbound-message-size: 16MB
+      # max-inbound-metadata-size: 8KB
+
+      # Dynamic schema inspection for grpcurl / Postman
+      reflection:
+        enabled: true
+
+      # Keep-Alive settings
+      keep-alive:
+        time: 30s
+        timeout: 10s
+
+      # Modern Spring SSL bundle integration (replaces hardcoded file paths)
+      ssl:
+        enabled: false
+        bundle: "server-bundle"
+
+
+
+
