@@ -10,7 +10,7 @@ option java_package = "com.grpc.product.proto";
 option java_multiple_files = true;
 
 message ProductRequestById {
-  int32 typeId = 1;
+  string typeId = 1;
 }
 
 message Product {
