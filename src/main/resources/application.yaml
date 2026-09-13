@@ -7,6 +7,10 @@ spring:
   grpc:
     server:
       port: 9090
+      health:
+        enabled: true
+        include-overall-health: true
+
 
       # Message payloads
       # max-inbound-message-size: 16MB
@@ -28,4 +32,9 @@ spring:
 
 
 
+
+#  UNKNOWN = 0;
+#  SERVING = 1;
+#  NOT_SERVING = 2;
+#  SERVICE_UNKNOWN = 3;
 

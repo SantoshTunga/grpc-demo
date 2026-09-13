@@ -10,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 public class GrpcServerKeepAliveConfig {
 
-
     @Bean
     ServerBuilderCustomizer<NettyServerBuilder> nettySeverBuilderCustomizer() {
 
@@ -18,6 +17,5 @@ public class GrpcServerKeepAliveConfig {
                 permitKeepAliveWithoutCalls(true);
 
     }
-
 
 }
